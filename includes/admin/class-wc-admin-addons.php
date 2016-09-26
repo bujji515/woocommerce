@@ -343,9 +343,9 @@ class WC_Admin_Addons {
 	 * @param string $plugin
 	 */
 	public static function output_button( $url, $text, $theme, $plugin = '' ) {
-		$theme = 'Free' === $text ? 'addons-button-outline-green' : $theme;
+		$theme = $text === __( 'Free', 'woocommerce' ) ? 'addons-button-outline-green' : $theme;
 		$theme = is_plugin_active( $plugin ) ? 'addons-button-installed' : $theme;
-		$text = is_plugin_active( $plugin ) ? 'Installed' : $text;
+		$text = is_plugin_active( $plugin ) ? __( 'Installed', 'woocommerce' ) : $text;
 		?>
 		<a
 			class="addons-button <?php echo esc_attr( $theme ); ?>"
